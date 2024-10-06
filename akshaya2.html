@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .heart-icon {
+            font-size: 100px;
+            color: red;
+            display: none;
+        }
+        .apology-content {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .friendship-details {
+            display: none;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .image-container {
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .emoji-container {
+            display: none;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .emoji {
+            font-size: 40px;
+            margin: 0 10px;
+        }
+        .letter {
+            display: none;
+            font-weight: bold;
+            color: #333;
+            font-size: 22px;
+            animation: fadeIn 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Apology to Akshaya</h1>
+        <div class="heart-icon" id="heart-icon">❤️</div>
+        <button onclick="showApology()">Click to Apologize</button>
+
+        <!-- Emoji Container -->
+        <div class="emoji-container" id="emoji-container">
+            <span class="emoji">😊</span>
+            <span class="emoji">💔</span>
+            <span class="emoji">🌈</span>
+        </div>
+
+        <!-- Friendship Details -->
+        <div class="friendship-details" id="friendship-details">
+            <p class="letter">Dear Akshaya,</p>
+            <p class="letter">I sincerely apologize for my behavior during our college days and afterward. I realize that I have repeatedly hurt you by avoiding you in public, neglecting conversations, and subjecting you to an endless cycle of following and unfollowing on Instagram, all of which may have caused irritation. Despite my actions, you have consistently shown patience and understanding in handling the situation.</p>
+            <p class="letter">I kindly ask you to put the past behind us and accept my heartfelt apology. I would love the opportunity to reconnect and talk as we did in the past. Please consider unblocking me on all platforms; your anger has deeply affected me, and I truly feel low without our communication.</p>
+            <p class="letter">Thank you for your understanding.</p>
+        </div>
+
+        <!-- Apology Content -->
+        <div class="apology-content" id="apology-content">
+            <p>I'm truly sorry for what happened. I value our friendship more than anything.</p>
+        </div>
+
+        <!-- Single Image Container -->
+        <div class="image-container" id="image-container">
+            <img src="https://via.placeholder.com/300" alt="Sorry Image" title="Sorry! Let's make up!">
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Sorry Message
+    </div>
+
+    <script>
+        function showApology() {
+            document.getElementById("heart-icon").style.display = "block";
+            document.getElementById("apology-content").style.display = "block";
+            document.getElementById("emoji-container").style.display = "flex";
+
+            // Animate the heart icon
+            setTimeout(() => {
+                document.getElementById("heart-icon").style.display = "none"; // Hide heart after some time
+            }, 2000);
+
+            // Show friendship details with animation
+            const letters = document.querySelectorAll('.letter');
+            letters.forEach((letter, index) => {
+                letter.style.animationDelay = `${index * 0.1}s`; // Staggered animation for each letter
+                letter.style.display = 'inline-block'; // Make letters visible
+            });
+
+            // Show friendship details
+            setTimeout(() => {
+                document.getElementById("friendship-details").style.display = "block";
+            }, letters.length * 100 + 500); // Show after all letters animate
+        }
+    </script>
+</body>
+</html>
